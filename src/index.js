@@ -1,17 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import data from './data.json';
 
+function GetDataFromJson() {
+  const arr = data;
+
+  const listItems = arr.map((val, index) =>
+    <tr >
+      <td className="numCol">{index + 1}</td>
+      <td className="idCol">{val.id} </td>
+      <td className="nameCol">{val.name} </td>
+      <td className="locationCol">{val.location} </td>
+      <td className="currencyCol">{val.currency} </td>
+    </tr>
+  );
+  return <table>
+    <thead>
+      <tr>
+        <th className="numCol" scope="col">#</th>
+        <th className="idCol" scope="col">ID</th>
+        <th className="nameCol" scope="col">Name</th>
+        <th className="locationCol" scope="col">Location</th>
+        <th className="currencyCol" scope="col">Currency</th>
+      </tr>
+    </thead>
+    <tbody>
+      {listItems}
+    </tbody>
+  </table>;
+}
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+  <GetDataFromJson />,
+  document.getElementById('getDataFromJson')
+)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
