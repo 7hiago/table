@@ -1,32 +1,28 @@
+import React, { useState } from 'react';
 import data from '../data/data.json'
 import './App.css';
+import { Table } from './Table/Table.js';
+import { Search } from './Search/Search.js';
+import { Context } from './Context/Context.js'
 
 function App() {
-    const arr = data;
+    const [ search, setSearch ] = useState('');
 
-    const listItems = arr.map((val, index) =>
-        <tr key={index}>
-            <td className="numCol">{index + 1}</td>
-            <td className="idCol">{val.id} </td>
-            <td className="nameCol">{val.name} </td>
-            <td className="locationCol">{val.location} </td>
-            <td className="currencyCol">{val.currency} </td>
-        </tr>
+    function filterData(data, search) {
+        return data.filter(data => data.name.toLowerCase().includes(search.toLowerCase()));
+    }
+
+    const filteredData = filterData(data, search);
+
+    return (
+        <Context.Provider value={[ search, setSearch ]} >
+            <Search />
+            <Table 
+                data={filteredData} 
+            />
+        </Context.Provider >
     );
-    return <table>
-        <thead>
-            <tr>
-                <th className="numCol" scope="col">#</th>
-                <th className="idCol" scope="col">ID</th>
-                <th className="nameCol" scope="col">Name</th>
-                <th className="locationCol" scope="col">Location</th>
-                <th className="currencyCol" scope="col">Currency</th>
-            </tr>
-        </thead>
-        <tbody>
-            {listItems}
-        </tbody>
-    </table>;
+    
 }
 
 export default App;
