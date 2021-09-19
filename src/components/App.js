@@ -6,7 +6,7 @@ import { Search } from './Search/Search';
 import { Context } from './Context/Context';
 
 function filterData(inputData, searchTerm) {
-  return inputData.filter((item) => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
+  return inputData.filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
 }
 
 function App() {
