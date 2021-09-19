@@ -14,7 +14,7 @@ export const Search = () => {
         type="text"
         value={search}
         onChange={({ target }) => setSearch(target.value)}
-        placeholder="Search item"
+        placeholder="Search item by name"
       />
     </div>
   );

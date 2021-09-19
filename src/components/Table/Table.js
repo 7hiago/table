@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Table.css';
 
 export const Table = ({ data }) => {
@@ -39,4 +40,8 @@ export const Table = ({ data }) => {
       </tbody>
     </table>
   );
+};
+
+Table.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
