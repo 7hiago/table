@@ -7,10 +7,10 @@ const searchIconUrl = 'https://static-assets.codecademy.com/Courses/Learn-Redux/
 export const Search = () => {
   const [search, setSearch] = useContext(Context);
   return (
-    <div id="search-container">
-      <img id="search-icon" alt="" src={searchIconUrl} />
+    <div className="search-container">
+      <img className="search-icon" alt="" src={searchIconUrl} />
       <input
-        id="search"
+        className="search"
         type="text"
         value={search}
         onChange={({ target }) => setSearch(target.value)}

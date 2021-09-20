@@ -25,8 +25,8 @@ export const Table = ({ data }) => {
     </tr>
   ));
   return (
-    <table>
-      <thead>
+    <table className="table">
+      <thead className="tableHead">
         <tr>
           <th className="numCol" scope="col">#</th>
           <th className="idCol" scope="col">ID</th>
@@ -35,7 +35,7 @@ export const Table = ({ data }) => {
           <th className="currencyCol" scope="col">Currency</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody className="tableBody">
         {listItems}
       </tbody>
     </table>

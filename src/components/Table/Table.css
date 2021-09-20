@@ -1,4 +1,4 @@
-table {
+.table {
     height: 40%;
     left: 10%;
     margin: 20px auto;
@@ -6,7 +6,7 @@ table {
     position: static;
     width: 65%;
   }
-  thead th {
+  .tableHead th {
     background: #88CCF1;
     color: #FFF;
     font-family: 'Lato', sans-serif;
