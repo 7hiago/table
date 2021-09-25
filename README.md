@@ -21,8 +21,8 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ### `npm run lint`
 
-Runs ESLint on all file in src directory.\
+Runs ESLint on all file in src directory.
 
 ### `npm run lint:fix`
 
-Runs ESLint automatically fix problems option for all file in src directory.\
+Runs ESLint automatically fix problems option for all file in src directory.
